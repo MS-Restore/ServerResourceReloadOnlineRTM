@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "serverresourcereloadonlinertm",
+  "version": "${version}",
+  "name": "ServerResourceReloadOnlineRTM",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/serverresourcereloadonlinertm/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": [
+      "fun.bm.serverresourcereloadonlinertm.client.ServerresourcereloadonlinertmDataGenerator"
+    ],
+    "main": [
+      "fun.bm.serverresourcereloadonlinertm.Serverresourcereloadonlinertm"
+    ]
+  },
+  "mixins": [
+    "serverresourcereloadonlinertm.mixins.json",
+    {
+      "config": "serverresourcereloadonlinertm.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
