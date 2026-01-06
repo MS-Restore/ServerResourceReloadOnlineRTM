@@ -45,7 +45,9 @@ public class ResourceHolder {
             Text promptOrigin = null;
             if (exists) promptOrigin = srpp.get().prompt();
             prompt = promptOrigin == null ? "" : promptOrigin.getString();
-        } else if (!prompt.isEmpty() && !prompt.startsWith("\"") && !prompt.endsWith("\"")) {
+        }
+
+        if (!prompt.isEmpty() && !prompt.startsWith("\"") && !prompt.endsWith("\"")) {
             prompt = "\"" + prompt + "\"";
         }
 
